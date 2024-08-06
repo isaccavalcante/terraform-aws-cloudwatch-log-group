@@ -1,10 +1,6 @@
 variable "name" {
   description = "Name of logs and supporting resources."
   type        = string
-  validation {
-    error_message = "Can include numbers, lowercase letters, uppercase letters, and hyphens (-). It cannot start or end with a hyphen (-)."
-    condition     = can(regex("^[0-9a-zA-Z]+([0-9a-zA-Z-]*[0-9a-zA-Z])*$", var.name))
-  }
 }
 
 variable "retention_in_days" {
